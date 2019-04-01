@@ -68,7 +68,6 @@ class Run_all():
         Base().screenshot(filename,png)
 
         # ----------发邮件-----------------
-
         Base().send_email(filename,png,venv)
 
 

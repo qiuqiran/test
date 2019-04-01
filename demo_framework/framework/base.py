@@ -62,6 +62,7 @@ class Base:
             venv = 'baidu'
             return venv
 
+
     def send_email(self, filename, png, venv):
         '''发送邮件'''
         # --------填写邮箱信息-----
