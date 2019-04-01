@@ -124,8 +124,31 @@ class Reptile:
             print('現價/平台售价/price：', price[1], 'HKD')
             print('原價/商品公价/original_price: ', price[2], 'HKD')
 
-# Reptile().baidu_one()
-Reptile().baidu_two()
-# Reptile().bing_img_dowmload()
-# Reptile().FTnews()
-# Reptile().vipstation()
+    def fortune(self):
+        '''
+        财富中文网
+        :return:
+        '''
+        html = urlopen('http://www.fortunechina.com/').read().decode('utf-8')
+        soup = BeautifulSoup(html, 'html.parser')
+
+        # 获取左边头条
+        q = soup.find_all('div', {'class': 'toutiao'})
+        headtitle = soup.find_all('p', {'class': 'headtitle'})
+
+        # k = re.findall(r'target="_blank">(\w.*?)</a></li>',html)
+        headtitle_href = re.findall(r'<a href="(.*?)" target="_blank"',str(headtitle))
+        headtitle_title = re.findall(r'target="_blank">(.*?)</a>',str(headtitle))
+        # print(headtitle_title[0],headtitle_href[0])
+
+        # 获取右边3条
+        otherhead = soup.find_all('div', {'class': 'otherhead'})
+
+        othertitle_href = re.findall(r'<a href="(.*?)" target="_blank"',str(otherhead))
+        othertitle_title = re.findall(r'target="_blank">(.*?)</a>',str(otherhead))
+        print(othertitle_href,othertitle_title)
+
+        # print(otherhead)
+
+
+Reptile().fortune()
