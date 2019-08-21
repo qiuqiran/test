@@ -30,7 +30,6 @@ class git(unittest.TestCase):
         import time
         # time.sleep(5)
         print('用例2',self.url)
-        psssddfgdg
         # self.assertEqual('d',1)
 
 
