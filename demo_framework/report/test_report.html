@@ -189,9 +189,9 @@ function showOutput(id, name) {
 
 <div class='heading'>
 <h1>baidu接口自动化测试报告</h1>
-<p class='attribute'><strong>测试执行时间:</strong> 2019-03-18 15:41:47</p>
-<p class='attribute'><strong>运行过程时间:</strong> 0:00:00</p>
-<p class='attribute'><strong>结果状态:</strong> 通过 6 失败 1 错误 1</p>
+<p class='attribute'><strong>测试执行时间:</strong> 2019-03-20 17:04:00</p>
+<p class='attribute'><strong>运行过程时间:</strong> 0:00:20</p>
+<p class='attribute'><strong>结果状态:</strong> 通过 7 失败 1 错误 1</p>
 
 <p class='description'></p>
 </div>
@@ -276,7 +276,7 @@ ft1.2: 测试开始
 用例2 https://www.baidu.com/
 测试结束
 Traceback (most recent call last):
-  File "E:\kew\kew-webapp\demo_framework\cases\test_abc_git.py", line 33, in test_02
+  File "E:\kew\test\demo_framework\cases\test_abc_git.py", line 33, in test_02
     psssddfgdg
 NameError: name 'psssddfgdg' is not defined
 
@@ -341,7 +341,6 @@ pt2.1: 测试开始
         
 pt2.2: 测试开始
 用例get
-200
 测试结束
 
 
@@ -371,7 +370,7 @@ pt2.3: 测试开始
 用例post
 {
 	"data":1,
-	"handlerTime":"1552894908595",
+	"handlerTime":"1553072642011",
 	"msg":"正常",
 	"result":true,
 	"returnCode":10000,
@@ -406,7 +405,7 @@ pt2.4: 测试开始
 用例post_json
 {
 	"data":"",
-	"handlerTime":"1552894908729",
+	"handlerTime":"1553072642188",
 	"msg":"正常",
 	"result":true,
 	"returnCode":10000,
@@ -414,7 +413,7 @@ pt2.4: 测试开始
 }
 {
 	"data":"",
-	"handlerTime":"1552894908822",
+	"handlerTime":"1553072642359",
 	"msg":"正常",
 	"result":true,
 	"returnCode":10000,
@@ -432,11 +431,11 @@ pt2.4: 测试开始
 
 <tr class='failClass'>
     <td>test_abc_view.view: XXXX</td>
+    <td>3</td>
     <td>2</td>
     <td>1</td>
-    <td>1</td>
     <td>0</td>
-    <td><a href="javascript:showClassDetail('c3',2)">更多</a></td>
+    <td><a href="javascript:showClassDetail('c3',3)">更多</a></td>
 </tr>
 
 <tr id='pt3.1' class='hiddenRow'>
@@ -485,7 +484,7 @@ ft3.2: 测试开始
 用例2 https://www.baidu.com/
 测试结束
 Traceback (most recent call last):
-  File "E:\kew\kew-webapp\demo_framework\cases\test_abc_view.py", line 31, in test_02
+  File "E:\kew\test\demo_framework\cases\test_abc_view.py", line 33, in test_02
     self.assertEqual('d',1)
 AssertionError: 'd' != 1
 
@@ -497,10 +496,36 @@ AssertionError: 'd' != 1
     </td>
 </tr>
 
+<tr id='pt3.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_03: ui自动化</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.3')" >
+        通过</a>
+
+    <div id='div_pt3.3' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt3.3').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt3.3: 测试开始
+测试结束
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
 <tr id='total_row'>
     <td>合计</td>
-    <td>8</td>
-    <td>6</td>
+    <td>9</td>
+    <td>7</td>
     <td>1</td>
     <td>1</td>
     <td>&nbsp;</td>

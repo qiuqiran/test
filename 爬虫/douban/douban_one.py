@@ -11,14 +11,14 @@ from selenium.webdriver.chrome.options import Options
 
 class Douban_Crawl_data():
 
-    print("""
+    """
     ###############################
         自家用的豆瓣电影短评爬虫
         Author: Kew_one
         Version: 2.0.0
         Date: 2018-03-28
     ###############################
-        """)
+    """
     def Douban_1(self):
 
         #-------豆瓣id
@@ -100,11 +100,72 @@ class Douban_Crawl_data():
             print('OK,下一页#######################')
             time.sleep(5)
 
+    def nowplaying_name(self):
+        '''
+        最近上映的电影
+        :return:
+        '''
+
+        url = 'https://movie.douban.com/cinema/nowplaying/shenzhen/'
+        html = request.urlopen(url).read().decode('utf-8')
+        nowplaying_name = re.findall(r'alt="(.*?)" rel="nofollow"', html)
+        return nowplaying_name
+
+    def nowplaying_link_num(self):
+        '''
+        最新上架电影id
+        '''
+        url = 'https://movie.douban.com/cinema/nowplaying/shenzhen/'
+        html = request.urlopen(url).read().decode('utf-8')
+        nowplaying_link_num = re.findall(
+            r'<a href="https://movie.douban.com/subject/(.*?)/\?from=playing_poster" class=ticket-btn target="_blank" data-psource="poster">',
+            html)
+        return nowplaying_link_num
+
+    def merge(self):
+        '''
+        合并id名字
+        :return:
+        '''
+        name = Douban_Crawl_data().nowplaying_name()
+        id = Douban_Crawl_data().nowplaying_link_num()
+        for i in range(len(id)):
+            print(name[i],id[i])
+
+    def dddddd(self):
+        '''
+        指定id爬取
+        :return:
+        '''
+        # https: // movie.douban.com / subject / 1421884 /
+        a = '1421884' #黑衣人：全球追缉 19971676
+        import random
+        lss = [10,20,30,40,50,60,70,80]
+        b = str(random.choice(lss))
+        url = 'https://movie.douban.com/subject/' + a + '/comments?start=' + b + '&limit=20&sort=new_score&status=P'
+        # print(url)
+
+
+        html = request.urlopen(url).read().decode('utf-8')
+        name = re.findall(r'<a.+people.+">(.+)</a>', html)  # 用户名
+        duanping = re.findall(r'<span class="short">(.*?)</span>', html)  # 短评
+        duanping_items = dict(zip(name, duanping))  # 合并数据
+        for x in range(len(duanping_items)):
+                print('@@' + str(name[x]) + '===>' + str(duanping[x]) )
+
+
+
+
+
+
+
+
+
+
 
 
 if __name__=='__main__':
-    Douban_Crawl_data().Douban_1()
-    # Douban_Crawl_data().Douban_2()
+    Douban_Crawl_data().dddddd()
 
 
 

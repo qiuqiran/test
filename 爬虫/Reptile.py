@@ -150,5 +150,33 @@ class Reptile:
 
         # print(otherhead)
 
+    def toutiao(self):
+        '''
+        今日头条
+        :return:
+        '''
+        # url = "https://www.toutiao.com/"
+        # soup = BeautifulSoup(url, 'html.parser')
 
-Reptile().fortune()
+
+        import requests
+
+        u = "https://www.toutiao.com/api/pc/feed/?category=news_hot&utm_source=toutiao&widen=1&max_behot_time=0&max_behot_time_tmp=0&tadrequire=true&as=A1F54CCBC844484&cp=5CB8C4D41824EE1&_signature=7zVMMgAAs5fmeTYnIwGr9e81TC"
+
+        f = requests.get(u)
+        print(f.text)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Reptile().toutiao()
