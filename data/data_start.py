@@ -1,4 +1,7 @@
 # -*- coding:utf-8 -*-
+# author: qiuqiran
+
+
 import numpy as np #为了方便使用numpy 采用np简写
 import pandas as pd
 import matplotlib.pyplot as plt
